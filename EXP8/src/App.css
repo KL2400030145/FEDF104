@@ -1,0 +1,80 @@
+/* Reset and full height setup */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f5f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Center everything inside #root */
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
+}
+
+/* Card-like app box */
+.app-container {
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+}
+
+/* Heading */
+h1 {
+  color: #1e3a5f;
+  margin-bottom: 20px;
+}
+
+/* Input and button styling */
+input {
+  padding: 10px;
+  width: 60%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  margin-left: 8px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1e3a5f;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #324b76;
+}
+
+/* Task list */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  background-color: #f8fafc;
+  padding: 10px 12px;
+  border-radius: 6px;
+}
+
+/* Empty message */
+p {
+  color: #64748b;
+  margin-top: 20px;
+  font-style: italic;
+}

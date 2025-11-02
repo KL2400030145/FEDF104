@@ -1,0 +1,4 @@
+[
+  { "id": 1, "text": "Finish frontend assignment", "completed": false },
+  { "id": 2, "text": "Prepare for exams", "completed": true }
+]
