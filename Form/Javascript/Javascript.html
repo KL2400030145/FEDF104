@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alert Example</title>
+</head>
+<body>
+    <button onclick="deleteData()">Delete Item</button>\
+    <script>
+        function deleteData()
+        {
+            const confirmDelete=confirm("Are you sure you want to delete?");
+            if(confirmDelete)
+        {
+            alert("Item deleted!");
+        }
+        else{
+            alert("Delete Cancelled.");
+        }
+        }
+    </script>
+</body>
+</html>

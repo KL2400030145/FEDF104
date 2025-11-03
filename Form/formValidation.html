@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .error { color: red; font-size: 13px; }
+    input, textarea { margin-bottom: 5px; display: block; }
+  </style>
+  <script>
+    function showError(id, message) {
+      document.getElementById(id).innerHTML = message;
+    }
+
+    function clearAllErrors() {
+      let errors = document.querySelectorAll(".error");
+      errors.forEach(e => e.innerHTML = "");
+    }
+
+    function validateForm(event) {
+      event.preventDefault();  // stop form submission
+      clearAllErrors();        // clear old errors
+      let valid = true;
+
+      // Get values with trim
+      let name = document.forms["regForm"]["name"].value.trim();
+      let username = document.forms["regForm"]["username"].value.trim();
+      let password = document.forms["regForm"]["password"].value;
+      let confirmPassword = document.forms["regForm"]["confirmPassword"].value;
+      let email = document.forms["regForm"]["email"].value.trim();
+      let mobile = document.forms["regForm"]["mobile"].value.trim();
+      let dob = document.forms["regForm"]["dob"].value.trim();
+      let gender = document.forms["regForm"]["gender"].value;
+      let address = document.forms["regForm"]["address"].value.trim();
+      let pincode = document.forms["regForm"]["pincode"].value.trim();
+
+      // Name
+      if (name === "") {
+        showError("nameError", "Name is required");
+        valid = false;
+      }
+
+      // Username
+      if (username.length < 5) {
+        showError("usernameError", "Username must be at least 5 characters");
+        valid = false;
+      }
+
+      // Password
+      if (password.trim().length < 6) {
+        showError("passwordError", "Password must be at least 6 characters");
+        valid = false;
+      }
+
+      // Confirm Password
+      if (password !== confirmPassword) {
+        showError("confirmPasswordError", "Passwords do not match");
+        valid = false;
+      }
+
+      // Email
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        showError("emailError", "Enter a valid email");
+        valid = false;
+      }
+
+      // Mobile
+      let mobilePattern = /^[0-9]{10}$/;
+      if (!mobile.match(mobilePattern)) {
+        showError("mobileError", "Enter a valid 10-digit mobile number");
+        valid = false;
+      }
+
+      // DOB
+      if (dob === "") {
+        showError("dobError", "Please select DOB");
+        valid = false;
+      }
+
+      // Gender
+      if (gender === "") {
+        showError("genderError", "Please select gender");
+        valid = false;
+      }
+
+      // Address
+      if (address === "") {
+        showError("addressError", "Address cannot be empty");
+        valid = false;
+      }
+
+      // Pincode
+      let pinPattern = /^[0-9]{6}$/;
+      if (!pincode.match(pinPattern)) {
+        showError("pincodeError", "Enter a valid 6-digit pincode");
+        valid = false;
+      }
+
+      if (valid) {
+        alert("Registration Successful!");
+        // If you want to really submit:
+        // event.target.submit();
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form name="regForm" id="regForm">
+    Name: <input type="text" name="name">
+    <span id="nameError" class="error"></span><br>
+
+    Username: <input type="text" name="username">
+    <span id="usernameError" class="error"></span><br>
+
+    Password: <input type="password" name="password">
+    <span id="passwordError" class="error"></span><br>
+
+    Confirm Password: <input type="password" name="confirmPassword">
+    <span id="confirmPasswordError" class="error"></span><br>
+
+    Email: <input type="text" name="email">
+    <span id="emailError" class="error"></span><br>
+
+    Mobile: <input type="text" name="mobile">
+    <span id="mobileError" class="error"></span><br>
+
+    Date of Birth: <input type="date" name="dob">
+    <span id="dobError" class="error"></span><br>
+
+    Gender:
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <input type="radio" name="gender" value="Other"> Other
+    <span id="genderError" class="error"></span><br>
+
+    Address: <textarea name="address"></textarea>
+    <span id="addressError" class="error"></span><br>
+
+    Pincode: <input type="text" name="pincode">
+    <span id="pincodeError" class="error"></span><br>
+
+    <input type="submit" value="Register">
+  </form>
+
+  <script>
+    // Attach event listener with preventDefault
+    document.getElementById("regForm").addEventListener("submit", validateForm);
+  </script>
+</body>
+</html>

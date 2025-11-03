@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pair Sum Finder</title>
+</head>
+<body>
+    <h2>Find Pair with Target Sum</h2>
+    <script>
+        function findPair(arr, target) {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[i] + arr[j] === target) {
+                        return [arr[i], arr[j]];
+                    }
+                }
+            }
+            return null; 
+        }
+        let numbers = [21,12,7, 15, 6,9 ];
+        let target = 30;
+        let result = findPair(numbers, target);
+        if (result) {
+            document.write("Pair found: " + result[0] + " + " + result[1] + " = " + target);
+        } else {
+            document.write("No pair found for target = " + target);
+        }
+    </script>
+</body>
+</html>

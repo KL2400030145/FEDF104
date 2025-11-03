@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>KL University Grid</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-rows: 10vh 60vh 20vh;
+      grid-template-columns: 35% 30% 35%;
+      height: 100vh;
+      gap: 5px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .head {
+      background-color: darkcyan;
+      grid-row: 1 / 2;
+      grid-column: 1 / 4;
+      height: 10vh;
+    }
+
+    .box1 {
+      background-color: bisque;
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+      padding-top: 10vh;
+    }
+
+    .box2 {
+      background-color: blue;
+      grid-row: 2 / 3;
+      grid-column: 2 / 3;
+      padding-top: 10vh;
+    }
+
+    .box3 {
+      background-color: aqua;
+      grid-row: 2 / 3;
+      grid-column: 3 / 4;
+      padding-top: 10vh;
+    }
+
+    .foot {
+      background-color: lawngreen;
+      grid-row: 3 / 4;
+      grid-column: 1 / 4;
+      padding-top: 2vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="head">KL University</div>
+    <div class="box1">Small Box 1</div>
+    <div class="box2">Small Box 2</div>
+    <div class="box3">Small Box 3</div>
+    <div class="foot">Footer</div>
+  </div>
+</body>
+</html>

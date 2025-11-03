@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Harshhhh</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+        }
+
+        .container {
+            background: #fff;
+            padding: 25px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        }
+
+        input, button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+            font-family: Georgia, 'Cursive', serif;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Harsha's Fate Machine</h2>
+
+    <form id="fateForm">
+        <input type="text" id="who" placeholder="Enter a name" required />
+        <input type="text" id="what" placeholder="Enter an animal" required />
+        <input type="text" id="why" placeholder="Enter any extra" required />
+        <button type="submit">Generate</button>
+    </form>
+
+    <div id="output"></div>
+</div>
+
+<script>
+    document.getElementById("fateForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const who = document.getElementById("who").value.trim();
+        const what = document.getElementById("what").value.trim();
+        const why = document.getElementById("why").value.trim();
+
+        const result = `${who} is a ${what} & ${why}`;
+        document.getElementById("output").innerText = result;
+    });
+</script>
+
+</body>
+</html>

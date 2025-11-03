@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x=100;
+        var y=21.12;
+        var z="fedf";
+        document.write(typeof(x),"<br>");
+        document.write(typeof(y),"<br>");
+        document.write(typeof(z),"<br>");
+        var x=200;
+        document.write(x,"<br>");
+        var i=10;
+        document.write(i,"<br>");
+        {
+        document.write(i,"<br>");
+        var i=20;
+        }
+        document.write(i,"<br>");
+        //global pollution
+        let j=10;
+        let k=20;
+        document.write(j,"<br>");
+        let a=25;
+        {
+        let a=35;
+        document.write(a,"<br>");
+        }
+        document.write(a,"<br>");
+        const b=200;
+        const w=250;
+        {
+        const b=300;
+        document.write(b,"<br>");
+        }
+        document.write(b,"<br>");
+        let m=120;
+        document.write(m,"<br>");
+        function h1_fun()
+        {let a=25;
+        {
+        let a=35;
+        document.write(a,"<br>");
+        }
+        document.write(a,"<br>");
+        }
+        h1_fun();
+        document.write(typeof number,"<br>");
+        document.write(typeof 10,"<br>");
+        document.write(typeof "10","<br>");
+        document.write(typeof 1023n,"<br>");
+        document.write(typeof Symbol(100),"<br>");
+        document.write(typeof h1_fun,"<br>");
+        document.write(typeof [],"<br>");
+        document.write(typeof null,"<br>");
+        document.write(typeof {},"<br>");
+        document.write(typeof false,"<br>");
+    </script>
+</body>
+</html>
